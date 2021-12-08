@@ -30,11 +30,11 @@ class AnimeTagging(datasets.GeneratorBasedBuilder):
             ],
         )
 
-    # def _split_generators(self, dl_manager: datasets.DownloadManager) -> List[datasets.SplitGenerator]:
-    #     images_path = Path(dl_manager.download_and_extract(_URL)) / "PetImages"
-    #     return [
-    #         datasets.SplitGenerator(name=datasets.Split.TRAIN, gen_kwargs={"images_path": images_path}),
-    #     ]
+    def _split_generators(self, dl_manager: datasets.DownloadManager) -> List[datasets.SplitGenerator]:
+        # images_path = Path(dl_manager.download_and_extract(_URL)) / "PetImages"
+        return [
+            datasets.SplitGenerator(name=datasets.Split.TRAIN, gen_kwargs={"images_path": images_path}),
+        ]
 
     def _generate_examples(self, images_path):
         logger.info("generating examples from = %s", images_path)
