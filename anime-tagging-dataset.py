@@ -32,7 +32,7 @@ class AnimeTagging(datasets.GeneratorBasedBuilder):
 
     def _split_generators(self, dl_manager: datasets.DownloadManager) -> List[datasets.SplitGenerator]:
         # images_path = Path(dl_manager.download_and_extract(_URL)) / "PetImages"
-        images_path = Path("./anime-dataset")
+        images_path = Path(".")
         return [
             datasets.SplitGenerator(name=datasets.Split.TRAIN, gen_kwargs={"images_path": images_path}),
         ]
