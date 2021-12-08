@@ -38,6 +38,7 @@ class AnimeTagging(datasets.GeneratorBasedBuilder):
         ]
 
     def _generate_examples(self, images_path):
+        print("generating examples from = %s", images_path)
         logger.info("generating examples from = %s", images_path)
         for i, filepath in enumerate(images_path.glob("**/*.jpg")):
             with filepath.open("rb") as f:
